@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import "./style/particleExplosion.css";
+
+#root {
+  width: 100%;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  cursor: pointer;
+  height: fit-content;
+  user-select: none;
+  width: fit-content;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+@theme {
+  --animate-flicker: flicker 2s infinite;
+
+  @keyframes flicker {
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8));
+    }
+    20%,
+    24%,
+    55% {
+      opacity: 0.3;
+      filter: none;
+    }
+  }
+}
+
+@theme {
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  --animate-wiggle: wiggle 0.3s ease-in-out infinite;
+}
+
+@theme {
+  @keyframes float1 {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(0.7);
+    }
+    50% {
+      transform: translate(-70%, -70%) scale(1);
+    }
+  }
+  @keyframes float2 {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-40%, 80%) scale(0.7);
+    }
+  }
+  @keyframes float3 {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(0.9);
+    }
+    50% {
+      transform: translate(90%, 40%) scale(1.1);
+    }
+  }
+
+  --animate-float1: float1 4s ease-in-out infinite;
+  --animate-float2: float2 6s ease-in-out infinite;
+  --animate-float3: float3 5s ease-in-out infinite;
+}
+
+@theme {
+  @keyframes shimmer {
+    0% {
+      left: -150%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+@theme {
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  --animate-gradient: gradient 3s ease infinite;
+}
+
+@theme {
+  @keyframes stretch {
+    0%,
+    100% {
+      letter-spacing: -0.5em;
+      opacity: 0.7;
+    }
+    50% {
+      letter-spacing: 0.2em;
+      opacity: 1;
+    }
+  }
+
+  --animate-stretch: stretch 2.5s ease-out infinite;
+}
+
+@theme {
+  @keyframes reveal {
+    0%,
+    100% {
+      letter-spacing: -0.5em;
+      opacity: 0.7;
+    }
+    50% {
+      letter-spacing: 0.2em;
+      opacity: 1;
+    }
+  }
+  --animate-reveal: reveal 2.5s ease-out infinite;
+}
+
+@theme {
+  @keyframes glitch {
+    0% {
+      text-shadow: 2px 2px #ff00c1, -2px -2px #00fff9;
+    }
+    20% {
+      text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9;
+    }
+    40% {
+      text-shadow: 2px -2px #ff00c1, -2px 2px #00fff9;
+    }
+    60% {
+      text-shadow: -2px 2px #ff00c1, 2px -2px #00fff9;
+    }
+    80% {
+      text-shadow: 2px 2px #ff00c1, -2px -2px #00fff9;
+    }
+    100% {
+      text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9;
+    }
+  }
+  --animate-glitch: glitch 1s infinite;
+}
+
+@theme {
+  @keyframes neon {
+    0%,
+    100% {
+      text-shadow: 0 0 5px #ec4899, 0 0 20px #ec4899;
+    }
+    50% {
+      text-shadow: 0 0 20px #ec4899, 0 0 40px #ec4899;
+    }
+  }
+  --animate-neon: neon 2s ease-in-out infinite;
+}
+
+@theme {
+  @keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  --animate-wave: wave 2s ease-in-out infinite;
+}
+
+@theme {
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  --animate-shine: shine 2s linear infinite;
+}
+
+@theme {
+  @keyframes spotlight {
+    0% {
+      mask-position: -60% 0;
+    }
+    100% {
+      mask-position: 160% 0;
+    }
+  }
+  --animate-spotlight: spotlight 3.5s ease-in-out infinite;
+}
+
+@theme {
+  @keyframes ripple {
+    0% {
+      transform: translate(-50%, -50%) scale(0.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(8);
+      opacity: 0;
+    }
+  }
+  --animate-ripple: ripple 0.6s linear forwards;
+}
+
+@theme {
+  @keyframes drive {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: calc(100% - 60px);
+    }
+  }
+  --animate-drive: drive 4s infinite;
+}
+
+@theme {
+  @keyframes circle {
+    from {
+      stroke-dasharray: 0 157;
+    }
+    to {
+      stroke-dasharray: 157 157;
+    }
+  }
+
+  @keyframes check {
+    from {
+      stroke-dasharray: 0 48;
+    }
+    to {
+      stroke-dasharray: 48 48;
+    }
+  }
+
+  --animate-circle: circle 1s ease-out forwards;
+
+  --animate-check: check 1.8s ease-out 1s forwards;
+}
+
+@theme {
+  @keyframes bounceUp {
+    0% {
+      transform: translateY(0) scale(1);
+    }
+    40% {
+      transform: translateY(-2.5rem) scale(1.1);
+    }
+    100% {
+      transform: translateY(-2rem) scale(1.1);
+    }
+  }
+
+  @keyframes bounceDown {
+    0% {
+      transform: translateY(-2rem) scale(1.1);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  --animate-bounceUp: bounceUp 0.4s ease-out forwards;
+  --animate-bounceDown: bounceDown 0.2s ease-out forwards;
+}
+
+@theme {
+  @keyframes spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+}

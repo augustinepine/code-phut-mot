@@ -1,0 +1,48 @@
+@keyframes particle-explode-0 {
+  to {
+    transform: translate(80px, -80px);
+    opacity: 0;
+  }
+}
+@keyframes particle-explode-1 {
+  to {
+    transform: translate(100px, 0px);
+    opacity: 0;
+  }
+}
+@keyframes particle-explode-2 {
+  to {
+    transform: translate(80px, 80px);
+    opacity: 0;
+  }
+}
+@keyframes particle-explode-3 {
+  to {
+    transform: translate(0px, 100px);
+    opacity: 0;
+  }
+}
+@keyframes particle-explode-4 {
+  to {
+    transform: translate(-80px, 80px);
+    opacity: 0;
+  }
+}
+@keyframes particle-explode-5 {
+  to {
+    transform: translate(-100px, 0px);
+    opacity: 0;
+  }
+}
+@keyframes particle-explode-6 {
+  to {
+    transform: translate(-80px, -80px);
+    opacity: 0;
+  }
+}
+@keyframes particle-explode-7 {
+  to {
+    transform: translate(0px, -100px);
+    opacity: 0;
+  }
+}
